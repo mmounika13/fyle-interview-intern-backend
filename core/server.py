@@ -12,6 +12,12 @@ app.register_blueprint(student_assignments_resources, url_prefix='/student')
 app.register_blueprint(teacher_assignments_resources, url_prefix='/teacher')
 
 
+from core.apis.principal import principal_blueprint
+
+app.register_blueprint(principal_blueprint, url_prefix='/principal')
+
+
+
 @app.route('/')
 def ready():
     response = jsonify({
